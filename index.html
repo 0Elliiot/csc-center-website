@@ -330,7 +330,7 @@
 
     <script>
 
-        emailjs.init("NwoK6YXyku3aP_dG8");
+        emailjs.init({publicKey: "NwoK6YXyku3aP_dG8"});
 
         function loadInquiries() {
             const data = JSON.parse(localStorage.getItem("inquiries")) || [];
@@ -377,4 +377,5 @@
 </body>
 
 </html>
+
 
