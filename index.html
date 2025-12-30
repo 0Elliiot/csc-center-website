@@ -59,9 +59,9 @@
     </section>
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Address: [Opp. Somna Road, Near Gabhana Tehsil, (U.P)]</p>
-        <p>Phone: [+91 9719713565]</p>
-        <p>Email: [pp49090@gmail.com]</p>
+        <p>Address: Opp. Somna Road, Near Gabhana Tehsil, (U.P)</p>
+        <p>Phone: +919719713565</p>
+        <p>Email: pp49090@gmail.com</p>
         <form id="inquiryForm">
             <label for="name">Name:</label>
             <input type="text" id="name" required>
@@ -75,12 +75,57 @@
     <footer>
         <p>&copy; 2016 CSC Center Shop. All rights reserved.</p>
     </footer>
-    <script>
-        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your inquiry! We will get back to you soon.');
-            // Here you can add code to send email or save to database
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/emailjs.min.js"></script>
+<script>
+    // EmailJS init (तुम्हारी public key डालो)
+    emailjs.init("NwoK6YXyku3aP_dG8");  // Replace with your actual public key
+
+    // Load inquiries from localStorage (same as before)
+    function loadInquiries() {
+        const inquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+        const list = document.getElementById('inquiryList');
+        list.innerHTML = '';
+        inquiries.forEach(inq => {
+            const div = document.createElement('div');
+            div.className = 'inquiry';
+            div.innerHTML = `<strong>${inq.name}</strong> (${inq.email}): ${inq.message}`;
+            list.appendChild(div);
         });
-    </script>
+    }
+
+    // Handle form submit
+    document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // EmailJS parameters
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message
+        };
+        
+        // Send email
+        emailjs.send("service_72cpkgi", "template_p8smz67", templateParams)  // Replace with your service and template IDs
+            .then(function(response) {
+                alert('Inquiry submitted! Email sent successfully.');
+                // Also save locally
+                const inquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+                inquiries.push({ name, email, message });
+                localStorage.setItem('inquiries', JSON.stringify(inquiries));
+                loadInquiries();
+                document.getElementById('inquiryForm').reset();
+            }, function(error) {
+                alert('Failed to send email. Please try again.');
+                console.log('EmailJS error:', error);
+            });
+    });
+
+    // Load inquiries on page load
+    window.onload = loadInquiries;
+</script>
 </body>
 </html>
+
