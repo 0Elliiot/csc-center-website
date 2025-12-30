@@ -1,2 +1,2 @@
-# david-csc-somna
+# david-csc-center-somna
 My CSC Centre Shop Website
