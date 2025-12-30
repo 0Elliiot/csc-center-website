@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSC Center Shop</title>
     <style>
+        header { background-color: #007bff; color: white; text-align: center; padding: 20px; }
+nav { background-color: #333; color: white; padding: 10px; text-align: center; }
+.service { text-align: center; }
+footer { text-align: center; padding: 10px; background-color: #333; color: white; }
+
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
         header { background-color: #007bff; color: white; text-align: center; padding: 20px; }
         nav { background-color: #333; color: white; padding: 10px; text-align: center; }
@@ -64,8 +69,8 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Address: Opp. Somna Road, Near Gabhana Tehsil, (U.P)</p>
-        <p>Phone: +919719713565</p>
-        <p>Email: anilsharmasms76@gmail.com</p>  <!-- Updated -->
+        <p>Phone: <a href="tel:+919719713565">+91 9719713565</a></p>
+        <p>Email: <a href="mailto:anilsharmasms76@gmail.com">anilsharmasms76@gmail.com</a></p>
         <form id="inquiryForm">
             <label for="name">Name:</label>
             <input type="text" id="name" required>
@@ -81,8 +86,11 @@
         <div id="inquiryList"></div>
     </section>
     <footer>
-        <p>&copy; 2016 CSC Center Shop. All rights reserved.</p>
-    </footer>
+        <p>&copy; <span id="yr"></span> CSC Centre Shop</p>
+        <script>
+        document.getElementById("yr").innerText = new Date().getFullYear();
+        </script>
+        </footer>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/emailjs.min.js"></script>
     <script>
         // EmailJS init
@@ -148,3 +156,4 @@
     </script>
 </body>
 </html>
+
