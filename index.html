@@ -83,14 +83,52 @@
         <p>&copy; 2016 CSC Center Shop. All rights reserved.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/emailjs.min.js"></script>
-    <script>
-        // EmailJS init
-        emailjs.init("NwoK6YXyku3aP_dG8");
+<script>
+    emailjs.init("NwoK6YXyku3aP_dG8");
 
-        // Load inquiries from localStorage
-        function loadInquiries() {
-            const inquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
-            const list = document.getElementById('inquiryList');
+    // Handle form submit
+    document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message
+        };
+        
+        // Send to admin (anilsharmasms76@gmail.com)
+        emailjs.send("service_72cpkgi", "template_p8smz67", templateParams)  // Admin template
+            .then(function() {
+                // Send auto-reply to user
+                return emailjs.send("service_72cpkgi", "template_p8smz67", {  // Same template or new one for user
+                    to_email: email,  // User की email
+                    from_name: name,
+                    message: message
+                });
+            })
+            .then(function() {
+                alert('Inquiry submitted! Email sent successfully.');
+                // Save locally
+                const inquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+                inquiries.push({ name, email, message });
+                localStorage.setItem('inquiries', JSON.stringify(inquiries));
+                loadInquiries();
+                document.getElementById('inquiryForm').reset();
+            })
+            .catch(function(error) {
+                alert('Failed to send email. Please try again.');
+                console.log('EmailJS error:', error);
+            });
+    });
+
+    // Load inquiries (same as before)
+    function loadInquiries() {
+        const inquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+        const list = document.getElementById('inquiryList');
+        if (list) {
             list.innerHTML = '';
             inquiries.forEach(inq => {
                 const div = document.createElement('div');
@@ -99,39 +137,10 @@
                 list.appendChild(div);
             });
         }
+    }
 
-        // Handle form submit
-        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // EmailJS parameters
-            const templateParams = {
-                from_name: name,
-                from_email: email,
-                message: message
-            };
-            
-            // Send email
-            emailjs.send("service_72cpkgi", "template_p8smz67", templateParams)
-                .then(function(response) {
-                    alert('Inquiry submitted! Email sent successfully.');
-                    // Also save locally
-                    const inquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
-                    inquiries.push({ name, email, message });
-                    localStorage.setItem('inquiries', JSON.stringify(inquiries));
-                    loadInquiries();
-                    document.getElementById('inquiryForm').reset();
-                }, function(error) {
-                    alert('Failed to send email. Please try again.');
-                    console.log('EmailJS error:', error);
-                });
-        });
-
-        // Load inquiries on page load
-        window.onload = loadInquiries;
-    </script>
+    window.onload = loadInquiries;
+</script>
 </body>
 </html>
+
