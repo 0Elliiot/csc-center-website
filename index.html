@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David CSC Centre | Premium Services</title>
+    <title>David CSC Centre | Premium Digital Services</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -37,7 +37,7 @@
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
-            padding: 60px 20px;
+            padding: 70px 20px;
             text-align: center;
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
@@ -47,6 +47,18 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
+        }
+
+        .status-badge {
+            background: #28a745;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         /* Navbar */
@@ -68,9 +80,7 @@
             font-size: 17px;
         }
 
-        nav a:hover {
-            color: var(--secondary-color);
-        }
+        nav a:hover { color: var(--secondary-color); }
 
         /* Section Global */
         section {
@@ -124,16 +134,31 @@
             margin-bottom: 15px;
         }
 
-        .service h3 {
-            margin-bottom: 10px;
-            color: #222;
-        }
-
         .price-tag {
             font-weight: bold;
             color: #28a745;
             display: block;
             margin-top: 10px;
+        }
+
+        /* Payment Section */
+        .qr-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin: 40px auto;
+            max-width: 400px;
+            border: 1px solid #eee;
+        }
+
+        .qr-card img {
+            width: 220px;
+            height: 220px;
+            border: 8px solid var(--light-bg);
+            border-radius: 15px;
+            margin: 15px 0;
         }
 
         /* Contact & Form */
@@ -147,28 +172,17 @@
             box-shadow: var(--shadow);
         }
 
-        @media (max-width: 768px) {
-            .contact-container { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
 
-        .contact-info p {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
+        .contact-info p { margin-bottom: 15px; font-size: 18px; }
+        .contact-info i { width: 30px; color: var(--primary-color); }
 
-        .contact-info i {
-            width: 30px;
-            color: var(--primary-color);
-        }
-
-        /* Map Placeholder Style */
         .map-box {
             background: #f0f0f0;
             padding: 20px;
             border-radius: 12px;
             text-align: center;
-            border: 2px dashed #ccc;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .btn-map {
@@ -183,86 +197,40 @@
         }
 
         form input, form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-            outline: none;
+            width: 100%; padding: 12px 15px; margin-bottom: 15px;
+            border-radius: 8px; border: 1px solid #ddd; outline: none; font-size: 16px;
         }
 
-        form input:focus, form textarea:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        form button {
+            background: var(--primary-color); color: white; border: none;
+            padding: 15px; border-radius: 8px; cursor: pointer;
+            width: 100%; font-size: 18px; font-weight: bold;
         }
 
-        button {
-            background: var(--primary-color);
-            border: none;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        button:hover {
-            background: #0056b3;
-            letter-spacing: 1px;
-        }
-
-        /* Floating Buttons */
+        /* Floating Actions */
         .call-btn, .whatsapp-btn {
-            position: fixed;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            z-index: 999;
-            text-decoration: none;
+            position: fixed; right: 20px; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: white; font-size: 28px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;
         }
-
         .call-btn { bottom: 100px; background: #ffb703; }
         .whatsapp-btn { bottom: 25px; background: #25d366; cursor: pointer; }
 
         .chat-box {
-            position: fixed;
-            bottom: 95px;
-            right: 20px;
-            width: 300px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            display: none;
-            z-index: 1000;
-            overflow: hidden;
+            position: fixed; bottom: 95px; right: 20px; width: 300px;
+            background: white; border-radius: 15px; box-shadow: var(--shadow);
+            display: none; z-index: 1001; overflow: hidden;
         }
 
-        .chat-header { background: #25d366; color: white; padding: 15px; font-weight: bold; }
-        .chat-body { padding: 15px; }
-
-        footer {
-            background: var(--dark-bg);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
+        footer { background: var(--dark-bg); color: white; text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 
 <body>
 
     <header>
+        <div class="status-badge" id="shopStatus">Checking Status...</div>
         <h1>David CSC Centre</h1>
         <p>Expert Government & Digital Services at Your Fingertips</p>
     </header>
@@ -270,13 +238,14 @@
     <nav>
         <a href="#home">Home</a>
         <a href="#services">Services</a>
+        <a href="#payment">Payment</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <section id="home">
         <h2>About Our Centre</h2>
-        <p style="text-align: center; max-width: 700px; margin: auto;">
-            We provide fast, secure, and reliable digital solutions including Aadhaar updates, PAN card applications, and all government certificate services for the community in Gabhana.
+        <p style="text-align: center; max-width: 750px; margin: auto;">
+            We are your trusted partner for all digital government services. From Aadhaar updates to PAN card applications, we provide fast, secure, and reliable solutions for the local community in Gabhana.
         </p>
     </section>
 
@@ -286,20 +255,20 @@
             <div class="service">
                 <i class="fa fa-id-card"></i>
                 <h3>Aadhaar Update</h3>
-                <p>Name, Address, and Mobile Linking</p>
-                <span class="price-tag">Fee: ₹100</span>
+                <p>Secure name, address, and mobile updates.</p>
+                <span class="price-tag">Price: ₹100</span>
+            </div>
+            <div class="service">
+                <i class="fa fa-address-card"></i>
+                <h3>PAN Card</h3>
+                <p>New applications and corrections.</p>
+                <span class="price-tag">Price: ₹200</span>
             </div>
             <div class="service">
                 <i class="fa fa-bolt"></i>
                 <h3>Bill Payments</h3>
                 <p>Electricity, DTH, Recharge & FASTag</p>
-                <span class="price-tag">Fee: ₹10 + Bill</span>
-            </div>
-            <div class="service">
-                <i class="fa fa-address-card"></i>
-                <h3>PAN Card</h3>
-                <p>New Application & Duplicate Recovery</p>
-                <span class="price-tag">Price: ₹200</span>
+                <span class="price-tag">Service Fee: ₹10+Bill</span>
             </div>
             <div class="service">
                 <i class="fa fa-file-invoice"></i>
@@ -310,72 +279,94 @@
         </div>
     </section>
 
+    <section id="payment">
+        <h2>Secure Payment QR</h2>
+        <div class="qr-card">
+            <p>Scan the QR code below to pay service fees or advances:</p>
+            
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=8954998216@ptsbi&pn=David%20CSC%20Shop&cu=INR" alt="Payment QR">
+            <p style="font-weight: bold; color: var(--primary-color); margin-top: 10px;">UPI ID: 8954998216@ptsbi</p>
+            <div style="margin-top: 10px; font-size: 22px; color: #555;">
+                <i class="fab fa-google-pay"></i> <i class="fab fa-phonepe"></i> <i class="fab fa-paytm"></i>
+            </div>
+            <small style="display:block; margin-top:10px; color: #888;">*Please send a screenshot on WhatsApp after payment.</small>
+        </div>
+    </section>
+
     <section id="contact">
         <h2>Get In Touch</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Contact Information</h3>
-                <br>
+                <h3>Contact Information</h3><br>
                 <p><i class="fa fa-map-marker-alt"></i> Opp. Somna Road, Gabhana, (U.P)</p>
                 <p><i class="fa fa-phone"></i> <a href="tel:+919719713565" style="color:inherit; text-decoration:none;">+91 9719713565</a></p>
                 <p><i class="fa fa-envelope"></i> <a href="mailto:pp49090@gmail.com" style="color:inherit; text-decoration:none;">pp49090@gmail.com</a></p>
                 
                 <div class="map-box">
-                    <i class="fa fa-map-marked-alt" style="font-size: 30px; color: #ccc;"></i>
-                    <p style="font-size: 14px; margin-top: 5px;">Find us on Google Maps</p>
-                    // google.com shop location
+                    <p>Find our shop location on Google Maps:</p>
                     <a href="https://maps.app.goo.gl/Pr96Nz1Rc9XC5wxi6" target="_blank" class="btn-map">
-                        <i class="fa fa-location-arrow" style="color:white;"></i> Open Shop Location
+                        <i class="fa fa-location-arrow"></i> Open Shop Location
                     </a>
                 </div>
             </div>
 
             <form id="inquiryForm">
                 <input id="name" placeholder="Full Name" required>
-                <input id="phone" placeholder="Phone Number" required>
+                <input id="phone" placeholder="WhatsApp Number" required>
                 <input id="email" type="email" placeholder="Email Address" required>
                 <textarea id="message" rows="4" placeholder="How can we help you?" required></textarea>
-                <button type="submit">Send Message</button>
+                <button type="submit" id="submitBtn">Send Message</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; <span id="yr"></span> David CSC Centre Shop. All rights reserved.</p>
+        <p>© <span id="yr"></span> David CSC Centre Shop. All rights reserved.</p>
     </footer>
 
     <a class="call-btn" href="tel:+919719713565"><i class="fa fa-phone"></i></a>
     <div class="whatsapp-btn" onclick="toggleChat()"><i class="fab fa-whatsapp"></i></div>
 
     <div class="chat-box" id="chatBox">
-        <div class="chat-header">WhatsApp Support</div>
-        <div class="chat-body">
-            <textarea id="waMsg" placeholder="Type your query here..." style="width:100%; border-radius:8px; padding:8px; border:1px solid #ddd;"></textarea>
-            <button class="send-btn" onclick="sendWA()" style="background:#25d366; width:100%; color:white; border:none; padding:10px; margin-top:10px; border-radius:8px; cursor:pointer;">Send to WhatsApp</button>
+        <div style="background:#25d366; color:white; padding:15px; font-weight:bold;">WhatsApp Support <span style="float:right; cursor:pointer" onclick="toggleChat()">×</span></div>
+        <div style="padding:15px;">
+            <textarea id="waMsg" placeholder="Type your query here..." style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;"></textarea>
+            <button onclick="sendWA()" style="background:#25d366; border:none; width:100%; color:white; padding:10px; margin-top:10px; border-radius:8px; cursor:pointer;">Send to WhatsApp</button>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         document.getElementById("yr").innerText = new Date().getFullYear();
-
         (function() { emailjs.init("2TPSutQQcUATGuWVM"); })();
 
-        function toggleChat(){
-            const box = document.getElementById("chatBox");
-            box.style.display = (box.style.display === "block") ? "none": "block";
+        function updateStatus() {
+            const hour = new Date().getHours();
+            const badge = document.getElementById('shopStatus');
+            if(hour >= 9 && hour < 20) {
+                badge.innerText = "Shop is Open Now";
+                badge.style.background = "#28a745";
+            } else {
+                badge.innerText = "Shop is Closed Now";
+                badge.style.background = "#dc3545";
+            }
+        }
+        updateStatus();
+
+        function toggleChat() {
+            const box = document.getElementById('chatBox');
+            box.style.display = (box.style.display === 'block') ? 'none' : 'block';
         }
 
-        function sendWA(){
+        function sendWA() {
             const msg = document.getElementById("waMsg").value;
             window.open("https://wa.me/919719713565?text="+encodeURIComponent(msg));
         }
 
         document.getElementById("inquiryForm").addEventListener("submit", e => {
             e.preventDefault();
-            const btn = e.target.querySelector("button");
-            btn.innerText = "Processing...";
-            btn.disabled = true;
+            const btn = document.getElementById("submitBtn");
+            btn.innerText = "Processing..."; btn.disabled = true;
 
             const params = {
                 from_name: document.getElementById("name").value,
@@ -386,27 +377,19 @@
             };
 
             const serviceID = "service_72cpkgi";
-            
-            // Dono Templates par send karna
             Promise.all([
                 emailjs.send(serviceID, "template_fef5h8p", params),
                 emailjs.send(serviceID, "template_p8smz67", params)
-            ])
-            .then(() => {
-                alert("Thank you! Inquiry Sent Successfully.");
+            ]).then(() => {
+                alert("Thank you! Your message has been sent successfully.");
                 document.getElementById("inquiryForm").reset();
-            })
-            .catch(err => {
-                alert("Failed to send. Please check your internet.");
+            }).catch(err => {
+                alert("Error sending message. Please try again.");
                 console.error(err);
-            })
-            .finally(() => {
-                btn.innerText = "Send Message";
-                btn.disabled = false;
+            }).finally(() => {
+                btn.innerText = "Send Message"; btn.disabled = false;
             });
         });
     </script>
 </body>
 </html>
-
-
