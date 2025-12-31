@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        : root {
+        :root {
             --primary-color: #007bff;
             --secondary-color: #00c6ff;
             --dark-bg: #111111;
@@ -168,11 +168,12 @@
 
 <body>
 
-    <header>
+     <header>
         <div class="status-badge" id="shopStatus">Updating Shop Status...</div>
         <h1>David CSC Centre</h1>
-        <p>Expert Government & Digital Services at Your Fingertips</p>
-    </header>
+        <p>Premium Government & Digital Services | Gabhana, U.P.</p>
+     </header>
+
     <nav>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -269,15 +270,15 @@
         });
 
         // Shop Opening Status
-        //const hour = new Date().getHours();
-        //const badge = document.getElementById('shopStatus');
-        //if(hour >= 9 && hour < 20) {
-            //badge.innerText = "Shop is Open";
-            //badge.style.background = "#28a745";
-        //} else {
-           // badge.innerText = "Shop is Closed";
-           // badge.style.background = "#dc3545";
-        //}
+        const hour = new Date().getHours();
+        const badge = document.getElementById('shopStatus');
+        if(hour >= 9 && hour < 20) {
+            badge.innerText = "Shop is Open";
+            badge.style.background = "#28a745";
+        } else {
+            badge.innerText = "Shop is Closed";
+            badge.style.background = "#dc3545";
+        }
 
         // Email Form
         document.getElementById("inquiryForm").addEventListener("submit", e => {
@@ -301,4 +302,3 @@
     </script>
 </body>
 </html>
-
