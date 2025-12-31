@@ -330,23 +330,9 @@ function sendWA(){
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-// Initialization
 (function() {
     emailjs.init("2TPSutQQcUATGuWVM"); 
 })();
-function loadInquiries() {
-    const data = JSON.parse(localStorage.getItem("inquiries")) || [];
-    const box = document.getElementById("inquiryList");
-    box.innerHTML = "";
-
-    data.forEach(i => {
-        const d = document.createElement("div");
-        d.className = "inquiry";
-        d.innerHTML = `<b>${i.name}</b> (${i.email}) : ${i.message}`;
-        box.appendChild(d);
-    });
-}
-
 document.getElementById("inquiryForm").addEventListener("submit", e => {
     e.preventDefault();
 
@@ -359,46 +345,42 @@ document.getElementById("inquiryForm").addEventListener("submit", e => {
     btn.disabled = true;
 
     const serviceID = "service_72cpkgi";
+
+    // Data jo templates mein jayega
     const params = {
         from_name: name,
         from_email: email,
-        message: message
+        message: message,
+        reply_to: email, // Customer ki email id
+        current_year: new Date().getFullYear()
     };
-
-    // 1. Pehla Email: Jo AAPKO milega (Contact Us Template)
+    // 1. Aapko notification (Admin Email)
     const sendToAdmin = emailjs.send(serviceID, "template_fef5h8p", params);
 
-    // 2. Dusra Email: Jo CUSTOMER ko jayega (Auto Reply Template)
+    // 2. Customer ko Auto Reply (Isme Dashboard mein ek achha format likh dena)
     const sendToCustomer = emailjs.send(serviceID, "template_p8smz67", params);
 
-    // Dono emails bhejne ke baad ka action
     Promise.all([sendToAdmin, sendToCustomer])
     .then(() => {
-        alert("Inquiry Sent & Auto-Reply Sent to Customer!");
-
-        // Local storage mein save karna
+        alert("Success! Humne aapki inquiry receive kar li hai aur aapko ek confirmation email bhej diya hai.");
+        
+        // LocalStorage logic
         const list = JSON.parse(localStorage.getItem("inquiries")) || [];
         list.push({ name, email, message });
         localStorage.setItem("inquiries", JSON.stringify(list));
-
+        
         loadInquiries();
         document.getElementById("inquiryForm").reset();
     })
     .catch(err => {
-        console.error("FAILED...", err);
-        alert("Email sending failed. Please check console.");
+        console.error("Error:", err);
+        alert("Kuch galti hui hai, please try again.");
     })
     .finally(() => {
         btn.innerText = "Send Inquiry";
         btn.disabled = false;
     });
 });
-
-window.onload = loadInquiries;
 </script>
 </body>
 </html>
-
-
-
-
