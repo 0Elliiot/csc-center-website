@@ -251,7 +251,7 @@ footer{
 
         <div class="service">
             <h3>Bill Payment</h3>
-            <p>Electricity / Recharge</p>
+            <p>Electricity / Recharge / DTH / FASTag</p>
             <p>₹10 + Bill</p>
         </div>
 
@@ -261,7 +261,7 @@ footer{
             <p>₹200</p>
         </div>
         <div class="service">
-            <h3>Family Govt Services</h3>
+            <h3>Govt Services for Families</h3>
             <p>Ration Card, Pension, Income/Domicile/Caste Certificate online </p>
         </div>
         <div class="service">
@@ -377,12 +377,12 @@ document.getElementById("inquiryForm").addEventListener("submit", e => {
     const sendToCustomer = emailjs.send(serviceID, "template_p8smz67", params); // Customer ke liye
     Promise.all([sendToAdmin, sendToCustomer])
     .then(() => {
-        alert("Success! Inquiry sent and confirmation email sent to customer.");
+        alert("Send Your Inquiry is Successful!"); // Inquiry sent and confirmation email sent to customer.");
 
         // Local storage mein save karna
-        const list = JSON.parse(localStorage.getItem("inquiries")) || [];
-        list.push({ name, email, message });
-        localStorage.setItem("inquiries", JSON.stringify(list));
+        // const list = JSON.parse(localStorage.getItem("inquiries")) || [];
+        // list.push({ name, email, message });
+        // localStorage.setItem("inquiries", JSON.stringify(list));
 
         loadInquiries(); // Ab ye error nahi dega kyunki upar defined hai
         document.getElementById("inquiryForm").reset();
@@ -401,5 +401,6 @@ window.onload = loadInquiries;
 </script>
 </body>
 </html>
+
 
 
