@@ -2,377 +2,381 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSC Centre Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSC Centre Shop</title>
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0
-        }
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
 
-        body {
-            font-family: Arial;
-            background: #eef2f7
-        }
+body{
+    font-family: Arial;
+    background:#eef2f7
+}
 
-        /* Header */
-        header {
-            background: linear-gradient(45deg, #007bff, #00c6ff);
-            color: white;
-            padding: 40px 20px;
-            text-align: center
-        }
+/* Header */
+header{
+    background:linear-gradient(45deg,#007bff,#00c6ff);
+    color: white;
+    padding:40px 20px;
+    text-align: center
+}
 
-        header h1 {
-            font-size: 30px;
-            margin-bottom: 10px
-        }
+header h1{
+    font-size:30px;
+    margin-bottom:10px
+}
 
-        /* Navbar */
-        nav {
-            background: #111;
-            padding: 12px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 50
-        }
+/* Navbar */
+nav{
+    background:#111;
+    padding:12px;
+    text-align: center;
+    position: sticky;
+    top:0;
+    z-index:50
+}
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold
-        }
+nav a{
+    color: white;
+    margin:0 15px;
+    text-decoration: none;
+    font-weight: bold
+}
 
-        nav a:hover {
-            color: #00c6ff
-        }
+nav a: hover{
+    color:#00c6ff
+}
 
-        /* Sections */
-        section {
-            padding: 30px;
-            max-width: 1000px;
-            margin: auto
-        }
+/* Sections */
+section{
+    padding:30px;
+    max-width:1000px;
+    margin: auto
+}
 
-        /* Services */
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px
-        }
+/* Services */
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px
+}
 
-        .service {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            width: 230px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .1)
-        }
+.service{
+    background: white;
+    padding:20px;
+    border-radius:12px;
+    width:230px;
+    text-align: center;
+    box-shadow:0 4px 10px rgba(0,0,0,.1)
+}
 
-        .service:hover {
-            transform: scale(1.05);
-            transition: .3s
-        }
+.service: hover{
+    transform:scale(1.05);
+    transition:.3s
+}
 
-        /* Forms */
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, .1)
-        }
+/* Form */
+form{
+    background: white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1)
+}
 
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc
-        }
+input,textarea{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+    border:1px solid #ccc
+}
 
-        button {
-            background: #007bff;
-            border: none;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer
-        }
+button{
+    background:#007bff;
+    border: none;
+    color: white;
+    padding:10px;
+    border-radius:5px;
+    cursor: pointer
+}
 
-        button:hover {
-            background: #0056b3
-        }
+button: hover{
+    background:#0056b3
+}
 
-        /* Inquiries */
-        .inquiry {
-            background: #e9ecef;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 7px
-        }
+/* Inquiry List */
+.inquiry{
+    background:#e9ecef;
+    padding:10px;
+    border-radius:8px;
+    margin-top:7px
+}
 
-        /* Footer */
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px
-        }
+/* Footer */
+footer{
+    background:#111;
+    color: white;
+    text-align :center;
+    padding:15px;
+    margin-top:30px
+}
 
-        /* Floating Call */
-        .call-btn {
-            position: fixed;
-            bottom: 95px;
-            right: 20px;
-            background: #ffb703;
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 28px;
-            box-shadow: 0 0 10px rgba(0,0,0,.3);
-            z-index: 999
-        }
+/* Call Button */
+.call-btn{
+    position: fixed;
+    bottom:95px;
+    right:20px;
+    background:#ffb703;
+    color: white;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    text-align: center;
+    font-size:28px;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+    z-index:999
+}
 
-        .call-btn i {
-            margin-top: 12px
-        }
+.call-btn i{
+    margin-top:12px
+}
 
-        /* WhatsApp */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 28px;
-            box-shadow: 0 0 10px rgba(0,0,0,.3);
-            z-index: 999
-        }
+/* WhatsApp Floating */
+.whatsapp-btn{
+    position: fixed;
+    bottom:20px;
+    right:20px;
+    background:#25d366;
+    color: white;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    text-align: center;
+    font-size:28px;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+    z-index:999
+}
 
-        .whatsapp-btn i {
-            margin-top: 12px
-        }
+.whatsapp-btn i{
+    margin-top:12px
+}
 
-        /* Popup */
-        .chat-box {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 320px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0,0,0,.2);
-            display: none;
-            z-index: 999
-        }
+/* WhatsApp Popup */
+.chat-box{
+    position: fixed;
+    bottom:90px;
+    right:20px;
+    width:320px;
+    background: white;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,.2);
+    display: none;
+    z-index:999
+}
 
-        .chat-header {
-            background: #25d366;
-            color: white;
-            padding: 12px;
-            border-radius: 12px 12px 0 0;
-            font-size: 18px
-        }
+.chat-header{
+    background:#25d366;
+    color: white;
+    padding:12px;
+    border-radius:12px 12px 0 0;
+    font-size:18px
+}
 
-        .chat-body {
-            padding: 10px
-        }
+.chat-body{
+    padding:10px
+}
 
-        .chat-body textarea {
-            width: 100%;
-            height: 80px;
-            border-radius: 8px;
-            padding: 8px
-        }
+.chat-body textarea{
+    width:100%;
+    height:80px;
+    border-radius:8px;
+    padding:8px
+}
 
-        .send-btn {
-            background: #25d366;
-            width: 100%;
-            padding: 10px;
-            border: none;
-            color: white;
-            border-radius: 8px;
-            margin-top: 5px
-        }
+.send-btn{
+    background:#25d366;
+    width:100%;
+    padding:10px;
+    border: none;
+    color: white;
+    border-radius:8px;
+    margin-top:5px
+}
 
-    </style>
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Welcome to David CSC Centre Shop</h1>
-        <p>Your one-stop solution for Government Services, Bill Payments & More</p>
-    </header>
+<header>
+    <h1>Welcome to David CSC Centre Shop</h1>
+    <p>Your one-stop solution for Government Services, Bill Payments & More</p>
+</header>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="#inquiries">Inquiries</a>
-    </nav>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#inquiries">Inquiries</a>
+</nav>
 
-    <section id="home">
-        <h2>About Us</h2>
-        <p>
-            We provide Aadhaar, PAN, Bill Payments, Ration Card, Income/Domicile/Caste Certificates, & Many More Online Service.
-        </p>
-    </section>
+<section id="home">
+    <h2>About Us</h2>
+    <p>
+        We provide Aadhaar, PAN, Bill Payments, Ration Card, Income/Domicile/Caste Certificates,
+        & Many More Online Services.
+    </p>
+</section>
 
-    <section id="services">
-        <h2>Our Services</h2>
+<section id="services">
+    <h2>Our Services</h2>
 
-        <div class="services">
+    <div class="services">
 
-            <div class="service">
-                <h3>Aadhaar Update</h3>
-                <p>Secure & Fast</p>
-                <p>₹100</p>
-            </div>
-
-            <div class="service">
-                <h3>Bill Payment</h3>
-                <p>Electricity / Recharge</p>
-                <p>₹10 + Bill</p>
-            </div>
-
-            <div class="service">
-                <h3>PAN Card</h3>
-                <p>New & Duplicate</p>
-                <p>₹200</p>
-            </div>
-
-            <div class="service">
-                <h3>Other Services</h3>
-                <p>Passport • Insurance • Govt Work</p>
-            </div>
-
+        <div class="service">
+            <h3>Aadhaar Update</h3>
+            <p>Secure & Fast</p>
+            <p>₹100</p>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-
-        <p>Address: Opp. Somna Road, Near Gabhana Tehsil, (U.P)</p>
-        <p>Phone: <a href="tel:+919719713565">+919719713565</a></p>
-        <p>Email: <a href="mailto:anilsharmasms76@gmail.com">anilsharmasms76@gmail.com</a></p>
-
-        <form id="inquiryForm">
-            <input id="name" placeholder="Your Name" required>
-            <input id="email" type="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Enter message" required></textarea>
-            <button type="submit">Send Inquiry</button>
-        </form>
-
-    </section>
-
-    <section id="inquiries">
-        <h2>Submitted Inquiries</h2>
-        <div id="inquiryList"></div>
-    </section>
-
-    <footer>
-        <p>&copy; <span id="yr"></span> CSC Centre Shop</p>
-    </footer>
-
-    <!-- Call Button -->
-    <a class="call-btn" href="tel:+919719713565">
-        <i class="fa fa-phone"></i>
-    </a>
-
-    <!-- WhatsApp -->
-    <div class="whatsapp-btn" onclick="toggleChat()">
-        <i class="fab fa-whatsapp"></i>
-    </div>
-
-    <!-- Popup -->
-    <div class="chat-box" id="chatBox">
-        <div class="chat-header">Chat on WhatsApp</div>
-        <div class="chat-body">
-            <textarea id="waMsg" placeholder="Type your message"></textarea>
-            <button class="send-btn" onclick="sendWA()">Send</button>
+        <div class="service">
+            <h3>Bill Payment</h3>
+            <p>Electricity / Recharge</p>
+            <p>₹10 + Bill</p>
         </div>
+
+        <div class="service">
+            <h3>PAN Card</h3>
+            <p>New & Duplicate</p>
+            <p>₹200</p>
+        </div>
+
+        <div class="service">
+            <h3>Other Services</h3>
+            <p>Passport • Insurance • Govt Work</p>
+        </div>
+
     </div>
+</section>
 
-    <script>
-        document.getElementById("yr").innerText = new Date().getFullYear();
+<section id="contact">
+    <h2>Contact Us</h2>
 
-        function toggleChat() {
-            let box = document.getElementById("chatBox");
-            box.style.display = (box.style.display === "block") ? "none": "block";
-        }
+    <p>Address: Opp. Somna Road, Near Gabhana Tehsil, (U.P)</p>
+    <p>Phone: <a href="tel:+919719713565">+919719713565</a></p>
+    <p>Email: <a href="mailto:anilsharmasms76@gmail.com">anilsharmasms76@gmail.com</a></p>
 
-        function sendWA() {
-            let msg = document.getElementById("waMsg").value;
-            window.open("https://wa.me/919719713565?text=" + encodeURIComponent(msg));
-        }
-    </script>
+    <form id="inquiryForm">
+        <input id="name" placeholder="Your Name" required>
+        <input id="email" type="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Enter message" required></textarea>
+        <button type="submit">Send Inquiry</button>
+    </form>
+</section>
 
-    <!-- Load EmailJS -->
+<section id="inquiries">
+    <h2>Submitted Inquiries</h2>
+    <div id="inquiryList"></div>
+</section>
+
+<footer>
+    <p>&copy; <span id="yr"></span> CSC Centre Shop</p>
+</footer>
+
+<!-- Call Button -->
+<a class="call-btn" href="tel:+919719713565">
+    <i class="fa fa-phone"></i>
+</a>
+
+<!-- WhatsApp Button -->
+<div class="whatsapp-btn" onclick="toggleChat()">
+    <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- WhatsApp Popup -->
+<div class="chat-box" id="chatBox">
+    <div class="chat-header">Chat on WhatsApp</div>
+    <div class="chat-body">
+        <textarea id="waMsg" placeholder="Type your message"></textarea>
+        <button class="send-btn" onclick="sendWA()">Send</button>
+    </div>
+</div>
+
+<script>
+document.getElementById("yr").innerText = new Date().getFullYear();
+
+function toggleChat(){
+    const box = document.getElementById("chatBox");
+    box.style.display = (box.style.display === "block") ? "none" : "block";
+}
+
+function sendWA(){
+    const msg = document.getElementById("waMsg").value;
+    window.open("https://wa.me/919719713565?text="+encodeURIComponent(msg));
+}
+</script>
+
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
 emailjs.init({
     publicKey: "NwoK6YXyku3aP_dG8"
 });
-</script>
 
-<!-- Your form handling script -->
-<script>
-document.getElementById("inquiryForm").addEventListener("submit", e => {
+function loadInquiries(){
+    const data = JSON.parse(localStorage.getItem("inquiries")) || [];
+    const box = document.getElementById("inquiryList");
+    box.innerHTML = "";
+
+    data.forEach(i=>{
+        const d=document.createElement("div");
+        d.className="inquiry";
+        d.innerHTML=`<b>${i.name}</b> (${i.email}) : ${i.message}`;
+        box.appendChild(d);
+    });
+}
+
+document.getElementById("inquiryForm").addEventListener("submit", e=>{
     e.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+    const name=document.getElementById("name").value;
+    const email=document.getElementById("email").value;
+    const message=document.getElementById("message").value;
 
-   emailjs.send("service_72cpkgi", "template_p8smz67", {
-    from_name: document.getElementById("name").value,
-    from_email: document.getElementById("email").value,
-    message: document.getElementById("message").value
-})
-.then(() => {
-    alert("Inquiry Submitted Successfully!");
+    emailjs.send("service_72cpkgi","template_p8smz67",{
+        from_name: name,
+        from_email: email,
+        message: message
+    })
+    .then(()=>{
+        alert("Inquiry Submitted Successfully!");
 
-    let list = JSON.parse(localStorage.getItem("inquiries")) || [];
-    list.push({
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value
+        const list = JSON.parse(localStorage.getItem("inquiries")) || [];
+        list.push({name,email,message});
+        localStorage.setItem("inquiries",JSON.stringify(list));
+
+        loadInquiries();
+        document.getElementById("inquiryForm").reset();
+    })
+    .catch(err=>{
+        console.log(err);
+        alert("Email Failed! Check console.");
     });
-
-    localStorage.setItem("inquiries", JSON.stringify(list));
-    loadInquiries();
-    document.getElementById("inquiryForm").reset();
-})
-.catch(err => {
-    console.log(err);
-    alert("Email Failed! Check console.");
 });
+
+window.onload = loadInquiries;
 </script>
 
 </body>
-
 </html>
-
-
-
-
