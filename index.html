@@ -340,7 +340,7 @@
         <section id="home">
             <h2>About Our Centre</h2>
             <p style="text-align: center; max-width: 800px; margin: auto;">
-                We provide professional digital solutions including Aadhaar updates, PAN Card services,
+                We provide professional digital solutions, including Aadhaar updates, PAN Card services,
                 and various government certificate applications. Fast, reliable, and secure.
             </p>
         </section>
@@ -385,13 +385,13 @@
                     <span class="price-tag">Click to View Details</span>
                 </div>
 
-                <div class="service">
-                    <i class="fa fa-Education"></i>
-                    <h3>Addmission & Scholarship</h3>
-                    <p>AMU, JNU, Web & School/College Applications</p>
-                     <span class="price-tag">Fee: ₹100 + Form Fee</span>
+                <div class="service" onclick="openPage('eduPage')">
+                    <i class="fa fa-graduation-cap"></i>
+                    <h3>Education Admission & Scholarship</h3>
+                    <p>School, College & Scholarship Forms</p>
+                    <span class="price-tag">Click to View Details</span>
                 </div>
-
+                
             </div>
         </section>
 
@@ -517,22 +517,18 @@
                 <th>Service</th>
                 <th>Fees</th>
             </tr>
-
             <tr>
                 <td>Ration Card</td>
                 <td class="price">₹150</td>
             </tr>
-
             <tr>
                 <td>Pension Apply</td>
                 <td class="price">₹200</td>
             </tr>
-
             <tr>
                 <td>PM Kisan</td>
                 <td class="price">₹150</td>
             </tr>
-
             <tr>
                 <td>E-Shram Card</td>
                 <td class="price">₹100</td>
@@ -542,9 +538,35 @@
                 <td class="price">₹100</td>
             </tr>
         </table>
-
         <span class="back-btn" onclick="showMain()">⬅ Back</span>
     </div>
+    
+    <div id="eduPage" class="inner-page">
+		<h2>Education Admission & Forms</h2>
+		<table>
+			<tr>
+				<th>Service</th>
+				<th>Fees</th>
+			</tr>
+			<tr>
+				<td>School Admission Form</td>
+				<td class="price">₹100</td>
+			</tr>
+			<tr>
+				<td>College Admission Form</td>
+				<td class="price">₹150</td>
+			</tr>
+			<tr>
+				<td>Scholarship Form</td>
+				<td class="price">₹100</td>
+			</tr>
+			<tr>
+				<td>TC / Migration / Bonafide / Degree</td>
+				<td class="price">₹100</td>
+			</tr>
+		</table>
+		<span class="back-btn" onclick="showMain()">⬅ Back</span>
+	</div>
 
     <footer>
         <p>
@@ -578,6 +600,7 @@
             document.getElementById("mainContent").classList.remove("hidden");
             document.getElementById("certPage").style.display = "none";
             document.getElementById("govtPage").style.display = "none";
+            document.getElementById("eduPage").style.display = "none";
         }
 
         const toggleBtn = document.getElementById('themeToggle');
@@ -639,6 +662,7 @@
     </script>
 </body>
 </html>
+
 
 
 
