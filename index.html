@@ -232,6 +232,36 @@
         }
 
 
+        /* ================= TRACK STATUS ================= */
+        .track-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+            gap:20px;
+        }
+
+        .track-card{
+            background:var(--card-bg);
+            padding:25px;
+            border-radius:18px;
+            text-align:center;
+            text-decoration:none;
+            color:var(--text-color);
+            box-shadow:var(--shadow);
+            border-bottom:4px solid var(--primary-color);
+        }
+
+        .track-card:hover{
+            transform:translateY(-6px);
+            background:var(--primary-color);
+            color:white;
+        }
+
+        .track-card i{
+            font-size:35px;
+            margin-bottom:10px;
+        }
+
+
         /* ================= TRUST BADGE ================= */
         .trust-badges{
             display:grid;
@@ -414,9 +444,12 @@
     </div>
 
 
-    <!-- TOP STRIP -->
+    <!-- TOP STRIP RUNNING LINE -->
     <div class="top-strip">
-        ✔ Govt Authorized ✔ Trusted Centre ✔ Fast Processing ✔ Lowest Fees
+        <marquee behavior="scroll" direction="left">
+            ⚡ Aadhaar Update Open | ⚡ PAN Card Apply & Correction | ⚡ New Ration Card & PM Kisan Help Available |
+            Visit David CSC Centre Gabhana
+        </marquee>
     </div>
 
 
@@ -453,6 +486,42 @@
                 Government Certificates, Forms Submission, Bill Payments and Education Services.
             </p>
         </section>
+
+
+        <!-- ⭐⭐ TRACK STATUS SECTION ADDED HERE ⭐⭐ -->
+        <section id="track">
+            <h2>Track Government Status Online</h2>
+
+            <div class="track-grid">
+
+                <a class="track-card" target="_blank"
+                    href="https://myaadhaar.uidai.gov.in/check-aadhaar-status">
+                    <i class="fa fa-fingerprint"></i><br>
+                    Aadhaar Status
+                </a>
+
+                <a class="track-card" target="_blank"
+                    href="https://www.pan.utiitsl.com/PAN_ONLINE/trackparam">
+                    <i class="fa fa-id-card"></i><br>
+                    PAN Card Status
+                </a>
+
+                <a class="track-card" target="_blank"
+                    href="https://nfsa.up.gov.in/Food/citizen/Default.aspx">
+                    <i class="fa fa-utensils"></i><br>
+                    Ration Card List
+                </a>
+
+                <a class="track-card" target="_blank"
+                    href="https://pmkisan.gov.in/BeneficiaryStatus_New.aspx">
+                    <i class="fa fa-wheat-awn"></i><br>
+                    PM Kisan Status
+                </a>
+
+            </div>
+        </section>
+        <!-- END TRACK -->
+
 
         <section id="services">
             <h2>Our Services</h2>
@@ -583,11 +652,11 @@
                     </p><br>
 
                     <iframe
-							src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3520.8885298722435!2d77.95118099999999!3d28.058428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDAzJzMwLjMiTiA3N8KwNTcnMDQuMyJF!5e0!3m2!1sen!2sin!4v1767350060081!5m2!1sen!2sin"
-							height="260"
-							style="border-radius:12px;border:none;width:100%;"
-							allowfullscreen="">
-						</iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3520.8885298722435!2d77.95118099999999!3d28.058428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDAzJzMwLjMiTiA3N8KwNTcnMDQuMyJF!5e0!3m2!1sen!2sin!4v1767350060081!5m2!1sen!2sin"
+                        height="260"
+                        style="border-radius:12px;border:none;width:100%;"
+                        allowfullscreen="">
+                    </iframe>
 
                 </div>
 
@@ -696,6 +765,7 @@
         function openPage(page) {
             document.getElementById("mainContent").classList.add("hidden");
             document.getElementById(page).style.display = "block";
+            window.scrollTo(0,0);
         }
 
         function showMain() {
@@ -703,6 +773,7 @@
             document.getElementById("certPage").style.display = "none";
             document.getElementById("govtPage").style.display = "none";
             document.getElementById("eduPage").style.display = "none";
+            window.scrollTo(0,0);
         }
 
         // FAQ
@@ -740,5 +811,3 @@
 
 </body>
 </html>
-
-
